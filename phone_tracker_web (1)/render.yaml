@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: phone-tracker-web
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: OPENCAGE_API_KEY
+        value: your_actual_opencage_api_key
